@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Aether X1 Flash Sale</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="frame">
+      <header>
+        <p class="kicker">Festival drop · 8:00 PM sharp</p>
+        <h1>Aether X1</h1>
+        <p class="lede">
+          500 units. No restocks. Checkout is tokenized in Redis, then written
+          asynchronously so the database never oversells.
+        </p>
+      </header>
+
+      <section class="product">
+        <div class="phone" aria-hidden="true">
+          <div class="bezel"></div>
+        </div>
+        <div class="buy">
+          <p class="price">₹79,999</p>
+          <p id="stockLine" class="stock">Waiting to go live</p>
+          <div class="bar"><span id="barFill"></span></div>
+          <button id="buyBtn" type="button" disabled>Start the sale first</button>
+          <p id="orderStatus" class="status" role="status"></p>
+        </div>
+      </section>
+
+      <section class="metrics">
+        <div><span>Redis tokens</span><strong id="mRemaining">—</strong></div>
+        <div><span>DB confirmed</span><strong id="mOrders">—</strong></div>
+        <div><span>Queue depth</span><strong id="mQueue">—</strong></div>
+        <div><span>Oversold?</span><strong id="mOversold">—</strong></div>
+      </section>
+
+      <section class="controls">
+        <button id="startBtn" type="button">Reset &amp; start sale</button>
+        <button id="rushBtn" type="button" class="ghost">
+          Simulate 2,000-user rush
+        </button>
+        <p class="hint">
+          The rush fires parallel <code>POST /api/checkout</code> calls from this
+          browser. Tokens cannot go below zero; confirmed rows cannot exceed 500.
+        </p>
+      </section>
+    </div>
+    <script src="/app.js"></script>
+  </body>
+</html>

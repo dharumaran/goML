@@ -1,0 +1,172 @@
+:root {
+  --ink: #1c1410;
+  --paper: #f4ead8;
+  --gold: #c0892a;
+  --deep: #6b1d1d;
+  --ok: #1f6b4a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top, #7a2424 0%, #241010 42%, #140c0a 100%);
+}
+
+.frame {
+  width: min(920px, calc(100% - 32px));
+  margin: 32px auto;
+  padding: 28px;
+  background: var(--paper);
+  border-radius: 18px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+}
+
+.kicker {
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: var(--deep);
+  margin: 0 0 8px;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  line-height: 1;
+}
+
+.lede {
+  max-width: 58ch;
+  color: #4a3b32;
+}
+
+.product {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 28px;
+  align-items: center;
+  margin: 24px 0;
+}
+
+.phone {
+  width: 160px;
+  height: 220px;
+  border-radius: 28px;
+  background: linear-gradient(160deg, #2b211c, #0f0c0b);
+  padding: 10px;
+}
+
+.bezel {
+  height: 100%;
+  border-radius: 20px;
+  background: linear-gradient(180deg, #d7b56a, #8a5a18);
+}
+
+.price {
+  font-size: 1.8rem;
+  margin: 0 0 8px;
+}
+
+.stock {
+  margin: 0 0 10px;
+  font-weight: 600;
+}
+
+.bar {
+  height: 8px;
+  background: #e0d2bc;
+  border-radius: 99px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.bar span {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: var(--deep);
+  transition: width 0.3s ease;
+}
+
+button {
+  appearance: none;
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 20px;
+  font: inherit;
+  font-weight: 700;
+  color: #fff;
+  background: var(--deep);
+  cursor: pointer;
+}
+
+button:disabled {
+  background: #9b8c7d;
+  cursor: not-allowed;
+}
+
+button.locked {
+  background: #3d2a22;
+}
+
+.ghost {
+  background: transparent;
+  color: var(--deep);
+  box-shadow: inset 0 0 0 2px var(--deep);
+}
+
+.status {
+  min-height: 1.4em;
+  margin: 12px 0 0;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.metrics div {
+  padding: 12px;
+  background: #efe4d0;
+  border-radius: 12px;
+}
+
+.metrics span {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.metrics strong {
+  font-size: 1.4rem;
+}
+
+.controls {
+  margin-top: 22px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.hint {
+  flex-basis: 100%;
+  color: #5c4c40;
+  font-size: 0.92rem;
+}
+
+@media (max-width: 700px) {
+  .product,
+  .metrics {
+    grid-template-columns: 1fr;
+  }
+}

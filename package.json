@@ -1,0 +1,16 @@
+{
+  "name": "fullstack-placement-demo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server/index.js",
+    "worker": "node server/worker.js",
+    "load-test": "node scripts/load-test.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "ioredis": "^5.4.2",
+    "pg": "^8.13.1"
+  }
+}
